@@ -55,12 +55,15 @@
     margin-top: 15px;
   }
 
-  iframe.background-video {
+  /* VIDEO AJUSTADO */
+  video.background-video {
     width: 100%;
-    max-width: 350px;
-    height: 200px;
-    border-radius: 10px;
-    border: none;
+    max-width: 300px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    opacity: 0.9;
   }
 
   .emoji {
@@ -115,15 +118,19 @@
 
 <div class="card">
   <h1>¡Feliz Cumpleaños Jean Koblik!</h1>
-  <p>Que tu día esté lleno de dulces, risas y alegría. <br>
-  Att: Tu Novia 😆🤣😁💖</p>
+  <p>
+    Que tu día esté lleno de dulces, risas y alegría. <br>
+    Att: Tu Novia 😆🤣😁💖
+  </p>
 
   <div class="video-box">
-    <iframe class="background-video"
-      src="https://www.youtube.com/embed/IRQl8_iHfGc?autoplay=1&mute=1&loop=1&playlist=IRQl8_iHfGc"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+    <video class="background-video"
+      src="besos.mp4"
+      autoplay
+      muted
+      loop
+      playsinline>
+    </video>
   </div>
 </div>
 
@@ -160,6 +167,8 @@
 
 </body>
 </html>
+
+
 
 
 
