@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Feliz Cumpleaños Jean Koblik 🎉</title>
+
 <style>
   body {
     margin: 0;
@@ -17,6 +18,7 @@
     font-family: 'Poppins', sans-serif;
     color: #fff;
     text-align: center;
+    overflow: hidden;
   }
 
   .card {
@@ -25,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.55);
     padding: 20px;
     border-radius: 15px;
     width: 90%;
@@ -39,6 +41,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
+    background-size: 200%;
     animation: floatTitle 3s ease-in-out infinite, shine 2.5s linear infinite;
   }
 
@@ -103,7 +106,6 @@
     5% { opacity:1; }
     100% { transform: translateY(120vh) rotate(720deg); opacity:1; }
   }
-
 </style>
 </head>
 
@@ -113,16 +115,17 @@
 
 <div class="card">
   <h1>¡Feliz Cumpleaños Jean Koblik!</h1>
-  <p>Que tu día esté lleno de dulces, risas y alegría. 
-    ATT: Tu Novia 😆🤣😁💖</p>
-<div class="video-box">
-  <iframe class="background-video"
-    src="https://www.youtube.com/watch?v=IRQl8_iHfGc&list=RDIRQl8_iHfGc&start_radio=1"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
+  <p>Que tu día esté lleno de dulces, risas y alegría. <br>
+  ATT: Tu Novia 😆🤣😁💖</p>
 
+  <div class="video-box">
+    <iframe class="background-video"
+      src="https://www.youtube.com/embed/IRQl8_iHfGc?autoplay=1&mute=1&loop=1&playlist=IRQl8_iHfGc"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
 <div class="confite-area" id="confite-area"></div>
 
@@ -130,29 +133,30 @@
   const confiteArea = document.getElementById('confite-area');
   const confites = ['🍬','🍭','🍫','🍡','🍪','🍩','🍰','🎈','✨','🎂'];
 
-  function random(min,max){return Math.random()*(max-min)+min;}
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
 
-  function createConfite(){
+  function createConfite() {
     const el = document.createElement('div');
-    el.className='confite';
-    el.textContent = confites[Math.floor(random(0,confites.length))];
-    el.style.left = random(0,100)+'%';
-    el.style.fontSize = random(20,40)+'px';
-    el.style.animationDuration = random(4,8)+'s';
-    el.style.animationDelay = random(0,5)+'s';
+    el.className = 'confite';
+    el.textContent = confites[Math.floor(random(0, confites.length))];
+    el.style.left = random(0, 100) + '%';
+    el.style.fontSize = random(20, 40) + 'px';
+    el.style.animationDuration = random(4, 8) + 's';
+    el.style.animationDelay = random(0, 5) + 's';
+
     confiteArea.appendChild(el);
-    setTimeout(()=>el.remove(), (parseFloat(el.style.animationDelay)+parseFloat(el.style.animationDuration))*1000+500);
+
+    const totalTime = (parseFloat(el.style.animationDuration) + parseFloat(el.style.animationDelay)) * 1000;
+    setTimeout(() => el.remove(), totalTime + 500);
   }
 
   setInterval(createConfite, 250);
-  for(let i=0;i<20;i++) setTimeout(createConfite, i*100);
+  for (let i = 0; i < 20; i++) {
+    setTimeout(createConfite, i * 100);
+  }
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
